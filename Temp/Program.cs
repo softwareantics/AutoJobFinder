@@ -20,9 +20,7 @@
             var jobSearcher = new SeekJobSearcher(factory, sourcer);
             var searchInfo = new JobSearchInformation("Sound Engineer", "Victoria");
 
-            System.Collections.Generic.IReadOnlyCollection<JobInformation> results = jobSearcher.Search(searchInfo);
-
-            foreach (JobInformation result in results)
+            foreach (JobInformation result in jobSearcher.Search(searchInfo).Result)
             {
                 Console.WriteLine(result.Title);
                 Console.WriteLine(result.CompanyName);
